@@ -1,0 +1,49 @@
+{
+  "name": "Address",
+  "fields": [
+    {
+      "fieldName": "buildingNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "streetName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "neighborhood",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "zipCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "additionalNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regionDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230112417",
+  "entityTableName": "address",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

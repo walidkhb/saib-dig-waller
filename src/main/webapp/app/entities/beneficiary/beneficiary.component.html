@@ -1,0 +1,133 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="saibDigitalWalletApp.beneficiary.home.title">Beneficiaries</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-beneficiary" [routerLink]="['/beneficiary/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="saibDigitalWalletApp.beneficiary.home.createLabel">
+            Create a new Beneficiary
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'saibDigitalWalletApp.beneficiary.home.search' | translate }}">
+
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="beneficiaries?.length === 0">
+        <span jhiTranslate="saibDigitalWalletApp.beneficiary.home.notFound">No beneficiaries found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="beneficiaries && beneficiaries.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.nickName">Nick Name</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.firstName">First Name</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.lastName">Last Name</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.middleName">Middle Name</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryId">Beneficiary Id</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryType">Beneficiary Type</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.address">Address</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.nationality">Nationality</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.telephone">Telephone</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.dateOfBirth">Date Of Birth</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.iDNumber">I D Number</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.iDType">I D Type</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryRelation">Beneficiary Relation</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryCity">Beneficiary City</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryPhoneCountryCode">Beneficiary Phone Country Code</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiarySourceOfFund">Beneficiary Source Of Fund</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryZipCode">Beneficiary Zip Code</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryStatus">Beneficiary Status</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryCurrency">Beneficiary Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryDetails">Beneficiary Details</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryBank">Beneficiary Bank</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryAccount">Beneficiary Account</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let beneficiary of beneficiaries ;trackBy: trackId">
+                    <td><a [routerLink]="['/beneficiary', beneficiary.id, 'view']">{{ beneficiary.id }}</a></td>
+                    <td>{{ beneficiary.nickName }}</td>
+                    <td>{{ beneficiary.firstName }}</td>
+                    <td>{{ beneficiary.lastName }}</td>
+                    <td>{{ beneficiary.middleName }}</td>
+                    <td>{{ beneficiary.beneficiaryId }}</td>
+                    <td>{{ beneficiary.beneficiaryType }}</td>
+                    <td>{{ beneficiary.address }}</td>
+                    <td>{{ beneficiary.nationality }}</td>
+                    <td>{{ beneficiary.telephone }}</td>
+                    <td>{{ beneficiary.dateOfBirth }}</td>
+                    <td>{{ beneficiary.iDNumber }}</td>
+                    <td>{{ beneficiary.iDType }}</td>
+                    <td>{{ beneficiary.beneficiaryRelation }}</td>
+                    <td>{{ beneficiary.beneficiaryCity }}</td>
+                    <td>{{ beneficiary.beneficiaryPhoneCountryCode }}</td>
+                    <td>{{ beneficiary.beneficiarySourceOfFund }}</td>
+                    <td>{{ beneficiary.beneficiaryZipCode }}</td>
+                    <td>{{ beneficiary.beneficiaryStatus }}</td>
+                    <td>{{ beneficiary.beneficiaryCurrency }}</td>
+                    <td>
+                        <div *ngIf="beneficiary.beneficiaryDetails">
+                            <a [routerLink]="['/payment-details', beneficiary.beneficiaryDetails?.id, 'view']" >{{ beneficiary.beneficiaryDetails?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="beneficiary.beneficiaryBank">
+                            <a [routerLink]="['/beneficiary-bank', beneficiary.beneficiaryBank?.id, 'view']" >{{ beneficiary.beneficiaryBank?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="beneficiary.beneficiaryAccount">
+                            <a [routerLink]="['/account-scheme', beneficiary.beneficiaryAccount?.id, 'view']" >{{ beneficiary.beneficiaryAccount?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/beneficiary', beneficiary.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/beneficiary', beneficiary.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(beneficiary)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

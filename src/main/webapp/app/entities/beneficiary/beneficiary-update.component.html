@@ -1,0 +1,164 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-beneficiary-heading" jhiTranslate="saibDigitalWalletApp.beneficiary.home.createOrEditLabel">Create or edit a Beneficiary</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.nickName" for="field_nickName">Nick Name</label>
+                    <input type="text" class="form-control" name="nickName" id="field_nickName"
+                           formControlName="nickName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.firstName" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                           formControlName="firstName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                           formControlName="lastName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.middleName" for="field_middleName">Middle Name</label>
+                    <input type="text" class="form-control" name="middleName" id="field_middleName"
+                           formControlName="middleName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryId" for="field_beneficiaryId">Beneficiary Id</label>
+                    <input type="text" class="form-control" name="beneficiaryId" id="field_beneficiaryId"
+                           formControlName="beneficiaryId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryType" for="field_beneficiaryType">Beneficiary Type</label>
+                    <input type="text" class="form-control" name="beneficiaryType" id="field_beneficiaryType"
+                           formControlName="beneficiaryType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.nationality" for="field_nationality">Nationality</label>
+                    <input type="text" class="form-control" name="nationality" id="field_nationality"
+                           formControlName="nationality"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
+                    <input type="text" class="form-control" name="dateOfBirth" id="field_dateOfBirth"
+                           formControlName="dateOfBirth"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.iDNumber" for="field_iDNumber">I D Number</label>
+                    <input type="text" class="form-control" name="iDNumber" id="field_iDNumber"
+                           formControlName="iDNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.iDType" for="field_iDType">I D Type</label>
+                    <input type="text" class="form-control" name="iDType" id="field_iDType"
+                           formControlName="iDType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryRelation" for="field_beneficiaryRelation">Beneficiary Relation</label>
+                    <input type="text" class="form-control" name="beneficiaryRelation" id="field_beneficiaryRelation"
+                           formControlName="beneficiaryRelation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryCity" for="field_beneficiaryCity">Beneficiary City</label>
+                    <input type="text" class="form-control" name="beneficiaryCity" id="field_beneficiaryCity"
+                           formControlName="beneficiaryCity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryPhoneCountryCode" for="field_beneficiaryPhoneCountryCode">Beneficiary Phone Country Code</label>
+                    <input type="text" class="form-control" name="beneficiaryPhoneCountryCode" id="field_beneficiaryPhoneCountryCode"
+                           formControlName="beneficiaryPhoneCountryCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiarySourceOfFund" for="field_beneficiarySourceOfFund">Beneficiary Source Of Fund</label>
+                    <input type="text" class="form-control" name="beneficiarySourceOfFund" id="field_beneficiarySourceOfFund"
+                           formControlName="beneficiarySourceOfFund"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryZipCode" for="field_beneficiaryZipCode">Beneficiary Zip Code</label>
+                    <input type="text" class="form-control" name="beneficiaryZipCode" id="field_beneficiaryZipCode"
+                           formControlName="beneficiaryZipCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryStatus" for="field_beneficiaryStatus">Beneficiary Status</label>
+                    <input type="text" class="form-control" name="beneficiaryStatus" id="field_beneficiaryStatus"
+                           formControlName="beneficiaryStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryCurrency" for="field_beneficiaryCurrency">Beneficiary Currency</label>
+                    <input type="text" class="form-control" name="beneficiaryCurrency" id="field_beneficiaryCurrency"
+                           formControlName="beneficiaryCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryDetails" for="field_beneficiaryDetails">Beneficiary Details</label>
+                    <select class="form-control" id="field_beneficiaryDetails" name="beneficiaryDetails" formControlName="beneficiaryDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paymentDetailsOption.id === editForm.get('beneficiaryDetails')!.value?.id ? editForm.get('beneficiaryDetails')!.value : paymentDetailsOption" *ngFor="let paymentDetailsOption of beneficiarydetails; trackBy: trackById">{{ paymentDetailsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryBank" for="field_beneficiaryBank">Beneficiary Bank</label>
+                    <select class="form-control" id="field_beneficiaryBank" name="beneficiaryBank" formControlName="beneficiaryBank">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="beneficiaryBankOption.id === editForm.get('beneficiaryBank')!.value?.id ? editForm.get('beneficiaryBank')!.value : beneficiaryBankOption" *ngFor="let beneficiaryBankOption of beneficiarybanks; trackBy: trackById">{{ beneficiaryBankOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.beneficiary.beneficiaryAccount" for="field_beneficiaryAccount">Beneficiary Account</label>
+                    <select class="form-control" id="field_beneficiaryAccount" name="beneficiaryAccount" formControlName="beneficiaryAccount">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="accountSchemeOption.id === editForm.get('beneficiaryAccount')!.value?.id ? editForm.get('beneficiaryAccount')!.value : accountSchemeOption" *ngFor="let accountSchemeOption of beneficiaryaccounts; trackBy: trackById">{{ accountSchemeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

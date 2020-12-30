@@ -1,0 +1,25 @@
+{
+  "saibDigitalWalletApp": {
+    "creditor": {
+      "home": {
+        "title": "Creditors",
+        "createLabel": "Create a new Creditor",
+        "createOrEditLabel": "Create or edit a Creditor",
+        "search": "Search for Creditor",
+        "notFound": "No Creditors found"
+      },
+      "created": "A new Creditor is created with identifier {{ param }}",
+      "updated": "A Creditor is updated with identifier {{ param }}",
+      "deleted": "A Creditor is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Creditor {{ id }}?"
+      },
+      "detail": {
+        "title": "Creditor"
+      },
+      "beneficiary": "Beneficiary",
+      "credWalletId": "Cred Wallet Id",
+      "credAmount": "Cred Amount"
+    }
+  }
+}

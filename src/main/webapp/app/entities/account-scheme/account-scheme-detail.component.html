@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accountScheme">
+            <h2><span jhiTranslate="saibDigitalWalletApp.accountScheme.detail.title">Account Scheme</span> {{ accountScheme.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.accountScheme.schemeName">Scheme Name</span></dt>
+                <dd>
+                    <span>{{ accountScheme.schemeName }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.accountScheme.identification">Identification</span></dt>
+                <dd>
+                    <span>{{ accountScheme.identification }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.accountScheme.wallet">Wallet</span></dt>
+                <dd>
+                    <div *ngIf="accountScheme.wallet">
+                        <a [routerLink]="['/wallet', accountScheme.wallet?.id, 'view']">{{ accountScheme.wallet?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/account-scheme', accountScheme.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

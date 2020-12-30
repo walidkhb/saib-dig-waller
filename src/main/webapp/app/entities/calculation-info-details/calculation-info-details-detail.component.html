@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="calculationInfoDetails">
+            <h2><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.detail.title">Calculation Info Details</span> {{ calculationInfoDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.totalDebitAmount">Total Debit Amount</span></dt>
+                <dd>
+                    <span>{{ calculationInfoDetails.totalDebitAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destinationAmount">Destination Amount</span></dt>
+                <dd>
+                    <span>{{ calculationInfoDetails.destinationAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destinationExchangeRate">Destination Exchange Rate</span></dt>
+                <dd>
+                    <span>{{ calculationInfoDetails.destinationExchangeRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destinationCurrencyIndicator">Destination Currency Indicator</span></dt>
+                <dd>
+                    <span>{{ calculationInfoDetails.destinationCurrencyIndicator }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.discountAmount">Discount Amount</span></dt>
+                <dd>
+                    <span>{{ calculationInfoDetails.discountAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.transCalculation">Trans Calculation</span></dt>
+                <dd>
+                    <div *ngIf="calculationInfoDetails.transCalculation">
+                        <a [routerLink]="['/transaction-info', calculationInfoDetails.transCalculation?.id, 'view']">{{ calculationInfoDetails.transCalculation?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.chargeAmount">Charge Amount</span></dt>
+                <dd>
+                    <div *ngIf="calculationInfoDetails.chargeAmount">
+                        <a [routerLink]="['/charge-amount', calculationInfoDetails.chargeAmount?.id, 'view']">{{ calculationInfoDetails.chargeAmount?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destChargeAmount">Dest Charge Amount</span></dt>
+                <dd>
+                    <div *ngIf="calculationInfoDetails.destChargeAmount">
+                        <a [routerLink]="['/destination-charge-amount', calculationInfoDetails.destChargeAmount?.id, 'view']">{{ calculationInfoDetails.destChargeAmount?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/calculation-info-details', calculationInfoDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

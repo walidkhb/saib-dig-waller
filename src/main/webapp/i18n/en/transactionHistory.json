@@ -1,0 +1,37 @@
+{
+  "saibDigitalWalletApp": {
+    "transactionHistory": {
+      "home": {
+        "title": "Transaction Histories",
+        "createLabel": "Create a new Transaction History",
+        "createOrEditLabel": "Create or edit a Transaction History",
+        "search": "Search for Transaction History",
+        "notFound": "No Transaction Histories found"
+      },
+      "created": "A new Transaction History is created with identifier {{ param }}",
+      "updated": "A Transaction History is updated with identifier {{ param }}",
+      "deleted": "A Transaction History is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction History {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction History"
+      },
+      "dateTime": "Date Time",
+      "tRReferenceNo": "T R Reference No",
+      "beneficiaryName": "Beneficiary Name",
+      "payMode": "Pay Mode",
+      "bankName": "Bank Name",
+      "payOutAmount": "Pay Out Amount",
+      "payOutCurrency": "Pay Out Currency",
+      "exchangeRate": "Exchange Rate",
+      "payInAmount": "Pay In Amount",
+      "payInCurrency": "Pay In Currency",
+      "commission": "Commission",
+      "status": "Status",
+      "description": "Description",
+      "purposeCode": "Purpose Code",
+      "purposeOfTransfer": "Purpose Of Transfer"
+    }
+  }
+}

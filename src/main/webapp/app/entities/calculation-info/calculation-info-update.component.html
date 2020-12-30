@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-calculation-info-heading" jhiTranslate="saibDigitalWalletApp.calculationInfo.home.createOrEditLabel">Create or edit a Calculation Info</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfo.customerId" for="field_customerId">Customer Id</label>
+                    <input type="text" class="form-control" name="customerId" id="field_customerId"
+                           formControlName="customerId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfo.beneficiaryId" for="field_beneficiaryId">Beneficiary Id</label>
+                    <input type="number" class="form-control" name="beneficiaryId" id="field_beneficiaryId"
+                           formControlName="beneficiaryId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfo.fromCurrency" for="field_fromCurrency">From Currency</label>
+                    <input type="text" class="form-control" name="fromCurrency" id="field_fromCurrency"
+                           formControlName="fromCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfo.toCurrency" for="field_toCurrency">To Currency</label>
+                    <input type="text" class="form-control" name="toCurrency" id="field_toCurrency"
+                           formControlName="toCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfo.transactionAmount" for="field_transactionAmount">Transaction Amount</label>
+                    <input type="number" class="form-control" name="transactionAmount" id="field_transactionAmount"
+                           formControlName="transactionAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfo.transactionCurrency" for="field_transactionCurrency">Transaction Currency</label>
+                    <input type="text" class="form-control" name="transactionCurrency" id="field_transactionCurrency"
+                           formControlName="transactionCurrency"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

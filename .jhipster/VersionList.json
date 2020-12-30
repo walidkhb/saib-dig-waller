@@ -1,0 +1,25 @@
+{
+  "name": "VersionList",
+  "fields": [
+    {
+      "fieldName": "aPIRecord",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "versionNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230114817",
+  "entityTableName": "version_list",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

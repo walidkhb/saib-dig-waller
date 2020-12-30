@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "currencyList": {
+      "home": {
+        "title": "Currency Lists",
+        "createLabel": "Create a new Currency List",
+        "createOrEditLabel": "Create or edit a Currency List",
+        "search": "Search for Currency List",
+        "notFound": "No Currency Lists found"
+      },
+      "created": "A new Currency List is created with identifier {{ param }}",
+      "updated": "A Currency List is updated with identifier {{ param }}",
+      "deleted": "A Currency List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Currency List {{ id }}?"
+      },
+      "detail": {
+        "title": "Currency List"
+      },
+      "currencyName": "Currency Name",
+      "currencyCode": "Currency Code"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "saibDigitalWalletApp": {
+    "beneficiary": {
+      "home": {
+        "title": "Beneficiaries",
+        "createLabel": "Create a new Beneficiary",
+        "createOrEditLabel": "Create or edit a Beneficiary",
+        "search": "Search for Beneficiary",
+        "notFound": "No Beneficiaries found"
+      },
+      "created": "A new Beneficiary is created with identifier {{ param }}",
+      "updated": "A Beneficiary is updated with identifier {{ param }}",
+      "deleted": "A Beneficiary is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Beneficiary {{ id }}?"
+      },
+      "detail": {
+        "title": "Beneficiary"
+      },
+      "nickName": "Nick Name",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "beneficiaryId": "Beneficiary Id",
+      "beneficiaryType": "Beneficiary Type",
+      "address": "Address",
+      "nationality": "Nationality",
+      "telephone": "Telephone",
+      "dateOfBirth": "Date Of Birth",
+      "iDNumber": "I D Number",
+      "iDType": "I D Type",
+      "beneficiaryRelation": "Beneficiary Relation",
+      "beneficiaryCity": "Beneficiary City",
+      "beneficiaryPhoneCountryCode": "Beneficiary Phone Country Code",
+      "beneficiarySourceOfFund": "Beneficiary Source Of Fund",
+      "beneficiaryZipCode": "Beneficiary Zip Code",
+      "beneficiaryStatus": "Beneficiary Status",
+      "beneficiaryCurrency": "Beneficiary Currency",
+      "beneficiaryDetails": "Beneficiary Details",
+      "beneficiaryBank": "Beneficiary Bank",
+      "beneficiaryAccount": "Beneficiary Account"
+    }
+  }
+}

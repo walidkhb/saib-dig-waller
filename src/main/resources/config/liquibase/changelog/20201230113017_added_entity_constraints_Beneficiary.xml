@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Beneficiary.
+    -->
+    <changeSet id="20201230113017-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="beneficiary_details_id"
+                                 baseTableName="beneficiary"
+                                 constraintName="fk_beneficiary_beneficiary_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment_details"/>
+
+        <addForeignKeyConstraint baseColumnNames="beneficiary_bank_id"
+                                 baseTableName="beneficiary"
+                                 constraintName="fk_beneficiary_beneficiary_bank_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beneficiary_bank"/>
+
+        <addForeignKeyConstraint baseColumnNames="beneficiary_account_id"
+                                 baseTableName="beneficiary"
+                                 constraintName="fk_beneficiary_beneficiary_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="account_scheme"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,37 @@
+{
+  "name": "BeneficiaryBank",
+  "fields": [
+    {
+      "fieldName": "bankCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankCountry",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankBranchCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "branchNameAndAddress",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230113217",
+  "entityTableName": "beneficiary_bank",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

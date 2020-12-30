@@ -1,0 +1,31 @@
+{
+  "saibDigitalWalletApp": {
+    "wallet": {
+      "home": {
+        "title": "Wallets",
+        "createLabel": "Create a new Wallet",
+        "createOrEditLabel": "Create or edit a Wallet",
+        "search": "Search for Wallet",
+        "notFound": "No Wallets found"
+      },
+      "created": "A new Wallet is created with identifier {{ param }}",
+      "updated": "A Wallet is updated with identifier {{ param }}",
+      "deleted": "A Wallet is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wallet {{ id }}?"
+      },
+      "detail": {
+        "title": "Wallet"
+      },
+      "walletId": "Wallet Id",
+      "status": "Status",
+      "statusUpdateDateTime": "Status Update Date Time",
+      "currency": "Currency",
+      "accountType": "Account Type",
+      "accountSubType": "Account Sub Type",
+      "description": "Description",
+      "accountScheme": "Account Scheme",
+      "customer": "Customer"
+    }
+  }
+}

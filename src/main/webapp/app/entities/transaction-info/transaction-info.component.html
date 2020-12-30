@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="saibDigitalWalletApp.transactionInfo.home.title">Transaction Infos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transaction-info" [routerLink]="['/transaction-info/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="saibDigitalWalletApp.transactionInfo.home.createLabel">
+            Create a new Transaction Info
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'saibDigitalWalletApp.transactionInfo.home.search' | translate }}">
+
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="transactionInfos?.length === 0">
+        <span jhiTranslate="saibDigitalWalletApp.transactionInfo.home.notFound">No transactionInfos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="transactionInfos && transactionInfos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionInfo.transactionType">Transaction Type</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionInfo.transactionId">Transaction Id</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionInfo.creditDebitIndicator">Credit Debit Indicator</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionInfo.creationDateTime">Creation Date Time</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionInfo.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionInfo.transactionAttr">Transaction Attr</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transactionInfo of transactionInfos ;trackBy: trackId">
+                    <td><a [routerLink]="['/transaction-info', transactionInfo.id, 'view']">{{ transactionInfo.id }}</a></td>
+                    <td>{{ transactionInfo.transactionType }}</td>
+                    <td>{{ transactionInfo.transactionId }}</td>
+                    <td>{{ transactionInfo.creditDebitIndicator }}</td>
+                    <td>{{ transactionInfo.creationDateTime }}</td>
+                    <td>{{ transactionInfo.status }}</td>
+                    <td>
+                        <div *ngIf="transactionInfo.transactionAttr">
+                            <a [routerLink]="['/transaction-attribute', transactionInfo.transactionAttr?.id, 'view']" >{{ transactionInfo.transactionAttr?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/transaction-info', transactionInfo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/transaction-info', transactionInfo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(transactionInfo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

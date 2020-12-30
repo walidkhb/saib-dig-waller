@@ -1,0 +1,77 @@
+{
+  "name": "TransactionHistory",
+  "fields": [
+    {
+      "fieldName": "dateTime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tRReferenceNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payMode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payOutAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payOutCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exchangeRate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payInAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payInCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commission",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purposeCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purposeOfTransfer",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230113917",
+  "entityTableName": "transaction_history",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

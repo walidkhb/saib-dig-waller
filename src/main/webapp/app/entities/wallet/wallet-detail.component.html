@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="wallet">
+            <h2><span jhiTranslate="saibDigitalWalletApp.wallet.detail.title">Wallet</span> {{ wallet.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.walletId">Wallet Id</span></dt>
+                <dd>
+                    <span>{{ wallet.walletId }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.status">Status</span></dt>
+                <dd>
+                    <span>{{ wallet.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.statusUpdateDateTime">Status Update Date Time</span></dt>
+                <dd>
+                    <span>{{ wallet.statusUpdateDateTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.currency">Currency</span></dt>
+                <dd>
+                    <span>{{ wallet.currency }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.accountType">Account Type</span></dt>
+                <dd>
+                    <span>{{ wallet.accountType }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.accountSubType">Account Sub Type</span></dt>
+                <dd>
+                    <span>{{ wallet.accountSubType }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.description">Description</span></dt>
+                <dd>
+                    <span>{{ wallet.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.wallet.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="wallet.customer">
+                        <a [routerLink]="['/customer', wallet.customer?.id, 'view']">{{ wallet.customer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wallet', wallet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

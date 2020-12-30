@@ -1,0 +1,49 @@
+{
+  "name": "Transfer",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "debtor",
+      "otherEntityRelationshipName": "transfer",
+      "relationshipName": "debtDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "creditor",
+      "otherEntityRelationshipName": "transfer",
+      "relationshipName": "credDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "beneficiary",
+      "otherEntityRelationshipName": "transfer",
+      "relationshipName": "beneficiaryInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "transactionInfo",
+      "otherEntityRelationshipName": "transfer",
+      "relationshipName": "transactionInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230112917",
+  "entityTableName": "transfer",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "TransactionAttribute",
+  "fields": [
+    {
+      "fieldName": "narativeLine1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "narativeLine2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "narativeLine3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "narativeLine4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientRefNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230113717",
+  "entityTableName": "transaction_attribute",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

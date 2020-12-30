@@ -1,0 +1,26 @@
+{
+  "saibDigitalWalletApp": {
+    "transfer": {
+      "home": {
+        "title": "Transfers",
+        "createLabel": "Create a new Transfer",
+        "createOrEditLabel": "Create or edit a Transfer",
+        "search": "Search for Transfer",
+        "notFound": "No Transfers found"
+      },
+      "created": "A new Transfer is created with identifier {{ param }}",
+      "updated": "A Transfer is updated with identifier {{ param }}",
+      "deleted": "A Transfer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transfer {{ id }}?"
+      },
+      "detail": {
+        "title": "Transfer"
+      },
+      "debtDetails": "Debt Details",
+      "credDetails": "Cred Details",
+      "beneficiaryInfo": "Beneficiary Info",
+      "transactionInfo": "Transaction Info"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+import { TestBed, getTestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TransactionDetailsService } from 'app/entities/transaction-details/transaction-details.service';
+import { ITransactionDetails, TransactionDetails } from 'app/shared/model/transaction-details.model';
+
+describe('Service Tests', () => {
+  describe('TransactionDetails Service', () => {
+    let injector: TestBed;
+    let service: TransactionDetailsService;
+    let httpMock: HttpTestingController;
+    let elemDefault: ITransactionDetails;
+    let expectedResult: ITransactionDetails | ITransactionDetails[] | boolean | null;
+
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+      });
+      expectedResult = null;
+      injector = getTestBed();
+      service = injector.get(TransactionDetailsService);
+      httpMock = injector.get(HttpTestingController);
+
+      elemDefault = new TransactionDetails(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+    });
+
+    describe('Service methods', () => {
+      it('should find an element', () => {
+        const returnedFromService = Object.assign({}, elemDefault);
+
+        service.find(123).subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'GET' });
+        req.flush(returnedFromService);
+        expect(expectedResult).toMatchObject(elemDefault);
+      });
+
+      it('should create a TransactionDetails', () => {
+        const returnedFromService = Object.assign(
+          {
+            id: 0,
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+
+        service.create(new TransactionDetails()).subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'POST' });
+        req.flush(returnedFromService);
+        expect(expectedResult).toMatchObject(expected);
+      });
+
+      it('should update a TransactionDetails', () => {
+        const returnedFromService = Object.assign(
+          {
+            debitAmount: 'BBBBBB',
+            debitCurrency: 'BBBBBB',
+            creditAmount: 'BBBBBB',
+            creditCurrency: 'BBBBBB',
+            exchangeRate: 'BBBBBB',
+            fees: 'BBBBBB',
+            purposeOfTransfer: 'BBBBBB',
+            partnerReferenceNumber: 'BBBBBB',
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+
+        service.update(expected).subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'PUT' });
+        req.flush(returnedFromService);
+        expect(expectedResult).toMatchObject(expected);
+      });
+
+      it('should return a list of TransactionDetails', () => {
+        const returnedFromService = Object.assign(
+          {
+            debitAmount: 'BBBBBB',
+            debitCurrency: 'BBBBBB',
+            creditAmount: 'BBBBBB',
+            creditCurrency: 'BBBBBB',
+            exchangeRate: 'BBBBBB',
+            fees: 'BBBBBB',
+            purposeOfTransfer: 'BBBBBB',
+            partnerReferenceNumber: 'BBBBBB',
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+
+        service.query().subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'GET' });
+        req.flush([returnedFromService]);
+        httpMock.verify();
+        expect(expectedResult).toContainEqual(expected);
+      });
+
+      it('should delete a TransactionDetails', () => {
+        service.delete(123).subscribe(resp => (expectedResult = resp.ok));
+
+        const req = httpMock.expectOne({ method: 'DELETE' });
+        req.flush({ status: 200 });
+        expect(expectedResult);
+      });
+    });
+
+    afterEach(() => {
+      httpMock.verify();
+    });
+  });
+});

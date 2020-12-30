@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "versionList": {
+      "home": {
+        "title": "Version Lists",
+        "createLabel": "Create a new Version List",
+        "createOrEditLabel": "Create or edit a Version List",
+        "search": "Search for Version List",
+        "notFound": "No Version Lists found"
+      },
+      "created": "A new Version List is created with identifier {{ param }}",
+      "updated": "A Version List is updated with identifier {{ param }}",
+      "deleted": "A Version List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Version List {{ id }}?"
+      },
+      "detail": {
+        "title": "Version List"
+      },
+      "aPIRecord": "A PI Record",
+      "versionNumber": "Version Number"
+    }
+  }
+}

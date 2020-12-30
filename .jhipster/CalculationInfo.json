@@ -1,0 +1,41 @@
+{
+  "name": "CalculationInfo",
+  "fields": [
+    {
+      "fieldName": "customerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fromCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "toCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionAmount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "transactionCurrency",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230114017",
+  "entityTableName": "calculation_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

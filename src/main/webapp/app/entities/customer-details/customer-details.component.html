@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="saibDigitalWalletApp.customerDetails.home.title">Customer Details</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-customer-details" [routerLink]="['/customer-details/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="saibDigitalWalletApp.customerDetails.home.createLabel">
+            Create a new Customer Details
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'saibDigitalWalletApp.customerDetails.home.search' | translate }}">
+
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="customerDetails?.length === 0">
+        <span jhiTranslate="saibDigitalWalletApp.customerDetails.home.notFound">No customerDetails found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="customerDetails && customerDetails.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.customerDetails.nationalIdentityNumber">National Identity Number</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.customerDetails.idType">Id Type</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.customerDetails.dateOfBirth">Date Of Birth</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.customerDetails.mobilePhoneNumber">Mobile Phone Number</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.customerDetails.agentVerificationNumber">Agent Verification Number</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customerDetails of customerDetails ;trackBy: trackId">
+                    <td><a [routerLink]="['/customer-details', customerDetails.id, 'view']">{{ customerDetails.id }}</a></td>
+                    <td>{{ customerDetails.nationalIdentityNumber }}</td>
+                    <td>{{ customerDetails.idType }}</td>
+                    <td>{{ customerDetails.dateOfBirth }}</td>
+                    <td>{{ customerDetails.mobilePhoneNumber }}</td>
+                    <td>{{ customerDetails.agentVerificationNumber }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/customer-details', customerDetails.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/customer-details', customerDetails.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(customerDetails)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

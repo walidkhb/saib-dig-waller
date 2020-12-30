@@ -1,0 +1,49 @@
+{
+  "name": "TransactionDetails",
+  "fields": [
+    {
+      "fieldName": "debitAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "debitCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creditAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creditCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exchangeRate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fees",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purposeOfTransfer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "partnerReferenceNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230113817",
+  "entityTableName": "transaction_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

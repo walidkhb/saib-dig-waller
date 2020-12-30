@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-address-heading" jhiTranslate="saibDigitalWalletApp.address.home.createOrEditLabel">Create or edit a Address</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.buildingNumber" for="field_buildingNumber">Building Number</label>
+                    <input type="text" class="form-control" name="buildingNumber" id="field_buildingNumber"
+                           formControlName="buildingNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.streetName" for="field_streetName">Street Name</label>
+                    <input type="text" class="form-control" name="streetName" id="field_streetName"
+                           formControlName="streetName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.neighborhood" for="field_neighborhood">Neighborhood</label>
+                    <input type="text" class="form-control" name="neighborhood" id="field_neighborhood"
+                           formControlName="neighborhood"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.cityName" for="field_cityName">City Name</label>
+                    <input type="text" class="form-control" name="cityName" id="field_cityName"
+                           formControlName="cityName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.zipCode" for="field_zipCode">Zip Code</label>
+                    <input type="text" class="form-control" name="zipCode" id="field_zipCode"
+                           formControlName="zipCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.additionalNumber" for="field_additionalNumber">Additional Number</label>
+                    <input type="text" class="form-control" name="additionalNumber" id="field_additionalNumber"
+                           formControlName="additionalNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.regionDescription" for="field_regionDescription">Region Description</label>
+                    <input type="text" class="form-control" name="regionDescription" id="field_regionDescription"
+                           formControlName="regionDescription"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.address.unitNumber" for="field_unitNumber">Unit Number</label>
+                    <input type="text" class="form-control" name="unitNumber" id="field_unitNumber"
+                           formControlName="unitNumber"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

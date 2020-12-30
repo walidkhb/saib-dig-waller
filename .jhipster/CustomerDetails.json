@@ -1,0 +1,41 @@
+{
+  "name": "CustomerDetails",
+  "fields": [
+    {
+      "fieldName": "nationalIdentityNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobilePhoneNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "pattern"
+      ],
+      "fieldValidateRulesPattern": "[+]\\d+-\\d+"
+    },
+    {
+      "fieldName": "agentVerificationNumber",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230112217",
+  "entityTableName": "customer_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

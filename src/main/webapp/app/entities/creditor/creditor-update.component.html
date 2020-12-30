@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-creditor-heading" jhiTranslate="saibDigitalWalletApp.creditor.home.createOrEditLabel">Create or edit a Creditor</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.creditor.beneficiary" for="field_beneficiary">Beneficiary</label>
+                    <select class="form-control" id="field_beneficiary" name="beneficiary" formControlName="beneficiary">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="beneficiaryOption.id === editForm.get('beneficiary')!.value?.id ? editForm.get('beneficiary')!.value : beneficiaryOption" *ngFor="let beneficiaryOption of beneficiaries; trackBy: trackById">{{ beneficiaryOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.creditor.credWalletId" for="field_credWalletId">Cred Wallet Id</label>
+                    <select class="form-control" id="field_credWalletId" name="credWalletId" formControlName="credWalletId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="walletOption.id === editForm.get('credWalletId')!.value?.id ? editForm.get('credWalletId')!.value : walletOption" *ngFor="let walletOption of credwalletids; trackBy: trackById">{{ walletOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.creditor.credAmount" for="field_credAmount">Cred Amount</label>
+                    <select class="form-control" id="field_credAmount" name="credAmount" formControlName="credAmount">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="amountOption.id === editForm.get('credAmount')!.value?.id ? editForm.get('credAmount')!.value : amountOption" *ngFor="let amountOption of credamounts; trackBy: trackById">{{ amountOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

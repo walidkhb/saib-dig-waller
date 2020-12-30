@@ -1,0 +1,33 @@
+{
+  "name": "AccountScheme",
+  "fields": [
+    {
+      "fieldName": "schemeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identification",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "accountScheme",
+      "relationshipName": "wallet",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201230112817",
+  "entityTableName": "account_scheme",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

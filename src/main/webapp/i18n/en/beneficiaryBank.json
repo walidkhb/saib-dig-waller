@@ -1,0 +1,27 @@
+{
+  "saibDigitalWalletApp": {
+    "beneficiaryBank": {
+      "home": {
+        "title": "Beneficiary Banks",
+        "createLabel": "Create a new Beneficiary Bank",
+        "createOrEditLabel": "Create or edit a Beneficiary Bank",
+        "search": "Search for Beneficiary Bank",
+        "notFound": "No Beneficiary Banks found"
+      },
+      "created": "A new Beneficiary Bank is created with identifier {{ param }}",
+      "updated": "A Beneficiary Bank is updated with identifier {{ param }}",
+      "deleted": "A Beneficiary Bank is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Beneficiary Bank {{ id }}?"
+      },
+      "detail": {
+        "title": "Beneficiary Bank"
+      },
+      "bankCode": "Bank Code",
+      "bankName": "Bank Name",
+      "bankCountry": "Bank Country",
+      "bankBranchCode": "Bank Branch Code",
+      "branchNameAndAddress": "Branch Name And Address"
+    }
+  }
+}

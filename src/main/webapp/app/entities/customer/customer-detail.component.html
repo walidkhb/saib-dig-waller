@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customer">
+            <h2><span jhiTranslate="saibDigitalWalletApp.customer.detail.title">Customer</span> {{ customer.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.firstNameArabic">First Name Arabic</span></dt>
+                <dd>
+                    <span>{{ customer.firstNameArabic }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.fatherNameArabic">Father Name Arabic</span></dt>
+                <dd>
+                    <span>{{ customer.fatherNameArabic }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.grandFatherNameArabic">Grand Father Name Arabic</span></dt>
+                <dd>
+                    <span>{{ customer.grandFatherNameArabic }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.grandFatherNameEnglish">Grand Father Name English</span></dt>
+                <dd>
+                    <span>{{ customer.grandFatherNameEnglish }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.placeOfBirth">Place Of Birth</span></dt>
+                <dd>
+                    <span>{{ customer.placeOfBirth }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.iDIssueDate">I D Issue Date</span></dt>
+                <dd>
+                    <span>{{ customer.iDIssueDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.iDExpiryDate">I D Expiry Date</span></dt>
+                <dd>
+                    <span>{{ customer.iDExpiryDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.maritalStatus">Marital Status</span></dt>
+                <dd>
+                    <span>{{ customer.maritalStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.customerId">Customer Id</span></dt>
+                <dd>
+                    <span>{{ customer.customerId }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.profileStatus">Profile Status</span></dt>
+                <dd>
+                    <span>{{ customer.profileStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.customerDetails">Customer Details</span></dt>
+                <dd>
+                    <div *ngIf="customer.customerDetails">
+                        <a [routerLink]="['/customer-details', customer.customerDetails?.id, 'view']">{{ customer.customerDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.customerPreference">Customer Preference</span></dt>
+                <dd>
+                    <div *ngIf="customer.customerPreference">
+                        <a [routerLink]="['/customer-preference', customer.customerPreference?.id, 'view']">{{ customer.customerPreference?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.address">Address</span></dt>
+                <dd>
+                    <div *ngIf="customer.address">
+                        <a [routerLink]="['/address', customer.address?.id, 'view']">{{ customer.address?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.customer.kycInfo">Kyc Info</span></dt>
+                <dd>
+                    <div *ngIf="customer.kycInfo">
+                        <a [routerLink]="['/kyc-info', customer.kycInfo?.id, 'view']">{{ customer.kycInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer', customer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

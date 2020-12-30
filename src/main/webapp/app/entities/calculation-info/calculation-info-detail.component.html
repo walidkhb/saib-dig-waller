@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="calculationInfo">
+            <h2><span jhiTranslate="saibDigitalWalletApp.calculationInfo.detail.title">Calculation Info</span> {{ calculationInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfo.customerId">Customer Id</span></dt>
+                <dd>
+                    <span>{{ calculationInfo.customerId }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfo.beneficiaryId">Beneficiary Id</span></dt>
+                <dd>
+                    <span>{{ calculationInfo.beneficiaryId }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfo.fromCurrency">From Currency</span></dt>
+                <dd>
+                    <span>{{ calculationInfo.fromCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfo.toCurrency">To Currency</span></dt>
+                <dd>
+                    <span>{{ calculationInfo.toCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfo.transactionAmount">Transaction Amount</span></dt>
+                <dd>
+                    <span>{{ calculationInfo.transactionAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.calculationInfo.transactionCurrency">Transaction Currency</span></dt>
+                <dd>
+                    <span>{{ calculationInfo.transactionCurrency }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/calculation-info', calculationInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

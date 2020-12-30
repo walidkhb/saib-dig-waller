@@ -1,0 +1,25 @@
+{
+  "name": "DistrictList",
+  "fields": [
+    {
+      "fieldName": "districtId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "districtName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230115017",
+  "entityTableName": "district_list",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

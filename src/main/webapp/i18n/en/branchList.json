@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "branchList": {
+      "home": {
+        "title": "Branch Lists",
+        "createLabel": "Create a new Branch List",
+        "createOrEditLabel": "Create or edit a Branch List",
+        "search": "Search for Branch List",
+        "notFound": "No Branch Lists found"
+      },
+      "created": "A new Branch List is created with identifier {{ param }}",
+      "updated": "A Branch List is updated with identifier {{ param }}",
+      "deleted": "A Branch List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Branch List {{ id }}?"
+      },
+      "detail": {
+        "title": "Branch List"
+      },
+      "branchId": "Branch Id",
+      "branchName": "Branch Name"
+    }
+  }
+}

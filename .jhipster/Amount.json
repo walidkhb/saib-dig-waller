@@ -1,0 +1,42 @@
+{
+  "name": "Amount",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "netAmount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purposeOfTransfer",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "chargeAmount",
+      "otherEntityRelationshipName": "amount",
+      "relationshipName": "walletChargeAmount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230113517",
+  "entityTableName": "amount",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

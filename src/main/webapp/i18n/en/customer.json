@@ -1,0 +1,38 @@
+{
+  "saibDigitalWalletApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Create a new Customer",
+        "createOrEditLabel": "Create or edit a Customer",
+        "search": "Search for Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "A new Customer is created with identifier {{ param }}",
+      "updated": "A Customer is updated with identifier {{ param }}",
+      "deleted": "A Customer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "firstNameArabic": "First Name Arabic",
+      "fatherNameArabic": "Father Name Arabic",
+      "grandFatherNameArabic": "Grand Father Name Arabic",
+      "grandFatherNameEnglish": "Grand Father Name English",
+      "placeOfBirth": "Place Of Birth",
+      "iDIssueDate": "I D Issue Date",
+      "iDExpiryDate": "I D Expiry Date",
+      "maritalStatus": "Marital Status",
+      "customerId": "Customer Id",
+      "profileStatus": "Profile Status",
+      "customerDetails": "Customer Details",
+      "customerPreference": "Customer Preference",
+      "address": "Address",
+      "kycInfo": "Kyc Info",
+      "fingerDetails": "Finger Details",
+      "wallet": "Wallet"
+    }
+  }
+}

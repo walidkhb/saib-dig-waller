@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "destinationChargeAmount": {
+      "home": {
+        "title": "Destination Charge Amounts",
+        "createLabel": "Create a new Destination Charge Amount",
+        "createOrEditLabel": "Create or edit a Destination Charge Amount",
+        "search": "Search for Destination Charge Amount",
+        "notFound": "No Destination Charge Amounts found"
+      },
+      "created": "A new Destination Charge Amount is created with identifier {{ param }}",
+      "updated": "A Destination Charge Amount is updated with identifier {{ param }}",
+      "deleted": "A Destination Charge Amount is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Destination Charge Amount {{ id }}?"
+      },
+      "detail": {
+        "title": "Destination Charge Amount"
+      },
+      "vATEstimated": "V AT Estimated",
+      "amountEstimated": "Amount Estimated"
+    }
+  }
+}
