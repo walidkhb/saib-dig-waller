@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "countryList": {
+      "home": {
+        "title": "Country Lists",
+        "createLabel": "Create a new Country List",
+        "createOrEditLabel": "Create or edit a Country List",
+        "search": "Search for Country List",
+        "notFound": "No Country Lists found"
+      },
+      "created": "A new Country List is created with identifier {{ param }}",
+      "updated": "A Country List is updated with identifier {{ param }}",
+      "deleted": "A Country List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Country List {{ id }}?"
+      },
+      "detail": {
+        "title": "Country List"
+      },
+      "countryName": "Country Name",
+      "countryCode": "Country Code"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="saibDigitalWalletApp.transactionHistory.home.title">Transaction Histories</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transaction-history" [routerLink]="['/transaction-history/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="saibDigitalWalletApp.transactionHistory.home.createLabel">
+            Create a new Transaction History
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'saibDigitalWalletApp.transactionHistory.home.search' | translate }}">
+
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="transactionHistories?.length === 0">
+        <span jhiTranslate="saibDigitalWalletApp.transactionHistory.home.notFound">No transactionHistories found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="transactionHistories && transactionHistories.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.dateTime">Date Time</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.tRReferenceNo">T R Reference No</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.beneficiaryName">Beneficiary Name</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payMode">Pay Mode</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.bankName">Bank Name</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payOutAmount">Pay Out Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payOutCurrency">Pay Out Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.exchangeRate">Exchange Rate</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payInAmount">Pay In Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payInCurrency">Pay In Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.commission">Commission</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.purposeCode">Purpose Code</span></th>
+                    <th scope="col" ><span jhiTranslate="saibDigitalWalletApp.transactionHistory.purposeOfTransfer">Purpose Of Transfer</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transactionHistory of transactionHistories ;trackBy: trackId">
+                    <td><a [routerLink]="['/transaction-history', transactionHistory.id, 'view']">{{ transactionHistory.id }}</a></td>
+                    <td>{{ transactionHistory.dateTime }}</td>
+                    <td>{{ transactionHistory.tRReferenceNo }}</td>
+                    <td>{{ transactionHistory.beneficiaryName }}</td>
+                    <td>{{ transactionHistory.payMode }}</td>
+                    <td>{{ transactionHistory.bankName }}</td>
+                    <td>{{ transactionHistory.payOutAmount }}</td>
+                    <td>{{ transactionHistory.payOutCurrency }}</td>
+                    <td>{{ transactionHistory.exchangeRate }}</td>
+                    <td>{{ transactionHistory.payInAmount }}</td>
+                    <td>{{ transactionHistory.payInCurrency }}</td>
+                    <td>{{ transactionHistory.commission }}</td>
+                    <td>{{ transactionHistory.status }}</td>
+                    <td>{{ transactionHistory.description }}</td>
+                    <td>{{ transactionHistory.purposeCode }}</td>
+                    <td>{{ transactionHistory.purposeOfTransfer }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/transaction-history', transactionHistory.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/transaction-history', transactionHistory.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(transactionHistory)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

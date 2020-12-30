@@ -1,0 +1,27 @@
+{
+  "saibDigitalWalletApp": {
+    "customerDetails": {
+      "home": {
+        "title": "Customer Details",
+        "createLabel": "Create a new Customer Details",
+        "createOrEditLabel": "Create or edit a Customer Details",
+        "search": "Search for Customer Details",
+        "notFound": "No Customer Details found"
+      },
+      "created": "A new Customer Details is created with identifier {{ param }}",
+      "updated": "A Customer Details is updated with identifier {{ param }}",
+      "deleted": "A Customer Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Details"
+      },
+      "nationalIdentityNumber": "National Identity Number",
+      "idType": "Id Type",
+      "dateOfBirth": "Date Of Birth",
+      "mobilePhoneNumber": "Mobile Phone Number",
+      "agentVerificationNumber": "Agent Verification Number"
+    }
+  }
+}

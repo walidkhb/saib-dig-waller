@@ -1,0 +1,49 @@
+{
+  "name": "Debtor",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "accountScheme",
+      "otherEntityRelationshipName": "debtor",
+      "relationshipName": "debtorAccount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "debtor",
+      "relationshipName": "debtWalletId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "amount",
+      "otherEntityRelationshipName": "debtor",
+      "relationshipName": "debtAmount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "debtor",
+      "relationshipName": "debtCustomer",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230113317",
+  "entityTableName": "debtor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

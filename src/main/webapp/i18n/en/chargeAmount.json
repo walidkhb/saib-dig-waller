@@ -1,0 +1,25 @@
+{
+  "saibDigitalWalletApp": {
+    "chargeAmount": {
+      "home": {
+        "title": "Charge Amounts",
+        "createLabel": "Create a new Charge Amount",
+        "createOrEditLabel": "Create or edit a Charge Amount",
+        "search": "Search for Charge Amount",
+        "notFound": "No Charge Amounts found"
+      },
+      "created": "A new Charge Amount is created with identifier {{ param }}",
+      "updated": "A Charge Amount is updated with identifier {{ param }}",
+      "deleted": "A Charge Amount is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Charge Amount {{ id }}?"
+      },
+      "detail": {
+        "title": "Charge Amount"
+      },
+      "amount": "Amount",
+      "currency": "Currency",
+      "vAT": "V AT"
+    }
+  }
+}

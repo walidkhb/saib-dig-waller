@@ -1,0 +1,25 @@
+{
+  "name": "DestinationChargeAmount",
+  "fields": [
+    {
+      "fieldName": "vATEstimated",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountEstimated",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230114317",
+  "entityTableName": "destination_charge_amount",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

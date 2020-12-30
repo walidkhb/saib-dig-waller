@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity CalculationInfoDetails.
+    -->
+    <changeSet id="20201230114117-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="trans_calculation_id"
+                                 baseTableName="calculation_info_details"
+                                 constraintName="fk_calculation_info_details_trans_calculation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transaction_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="charge_amount_id"
+                                 baseTableName="calculation_info_details"
+                                 constraintName="fk_calculation_info_details_charge_amount_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="charge_amount"/>
+
+        <addForeignKeyConstraint baseColumnNames="dest_charge_amount_id"
+                                 baseTableName="calculation_info_details"
+                                 constraintName="fk_calculation_info_details_dest_charge_amount_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="destination_charge_amount"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="destinationChargeAmount">
+            <h2><span jhiTranslate="saibDigitalWalletApp.destinationChargeAmount.detail.title">Destination Charge Amount</span> {{ destinationChargeAmount.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.destinationChargeAmount.vATEstimated">V AT Estimated</span></dt>
+                <dd>
+                    <span>{{ destinationChargeAmount.vATEstimated }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.destinationChargeAmount.amountEstimated">Amount Estimated</span></dt>
+                <dd>
+                    <span>{{ destinationChargeAmount.amountEstimated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/destination-charge-amount', destinationChargeAmount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

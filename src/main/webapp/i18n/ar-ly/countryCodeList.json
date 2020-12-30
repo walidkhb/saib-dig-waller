@@ -1,0 +1,25 @@
+{
+  "saibDigitalWalletApp": {
+    "countryCodeList": {
+      "home": {
+        "title": "Country Code Lists",
+        "createLabel": "Create a new Country Code List",
+        "createOrEditLabel": "Create or edit a Country Code List",
+        "search": "Search for Country Code List",
+        "notFound": "No Country Code Lists found"
+      },
+      "created": "A new Country Code List is created with identifier {{ param }}",
+      "updated": "A Country Code List is updated with identifier {{ param }}",
+      "deleted": "A Country Code List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Country Code List {{ id }}?"
+      },
+      "detail": {
+        "title": "Country Code List"
+      },
+      "countryName": "Country Name",
+      "countryCode": "Country Code",
+      "countryISDCode": "Country ISD Code"
+    }
+  }
+}

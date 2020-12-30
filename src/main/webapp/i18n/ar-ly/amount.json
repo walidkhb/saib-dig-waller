@@ -1,0 +1,27 @@
+{
+  "saibDigitalWalletApp": {
+    "amount": {
+      "home": {
+        "title": "Amounts",
+        "createLabel": "Create a new Amount",
+        "createOrEditLabel": "Create or edit a Amount",
+        "search": "Search for Amount",
+        "notFound": "No Amounts found"
+      },
+      "created": "A new Amount is created with identifier {{ param }}",
+      "updated": "A Amount is updated with identifier {{ param }}",
+      "deleted": "A Amount is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Amount {{ id }}?"
+      },
+      "detail": {
+        "title": "Amount"
+      },
+      "amount": "Amount",
+      "netAmount": "Net Amount",
+      "currency": "Currency",
+      "purposeOfTransfer": "Purpose Of Transfer",
+      "walletChargeAmount": "Wallet Charge Amount"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-calculation-info-details-heading" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.home.createOrEditLabel">Create or edit a Calculation Info Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.totalDebitAmount" for="field_totalDebitAmount">Total Debit Amount</label>
+                    <input type="text" class="form-control" name="totalDebitAmount" id="field_totalDebitAmount"
+                           formControlName="totalDebitAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destinationAmount" for="field_destinationAmount">Destination Amount</label>
+                    <input type="text" class="form-control" name="destinationAmount" id="field_destinationAmount"
+                           formControlName="destinationAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destinationExchangeRate" for="field_destinationExchangeRate">Destination Exchange Rate</label>
+                    <input type="text" class="form-control" name="destinationExchangeRate" id="field_destinationExchangeRate"
+                           formControlName="destinationExchangeRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destinationCurrencyIndicator" for="field_destinationCurrencyIndicator">Destination Currency Indicator</label>
+                    <input type="text" class="form-control" name="destinationCurrencyIndicator" id="field_destinationCurrencyIndicator"
+                           formControlName="destinationCurrencyIndicator"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.discountAmount" for="field_discountAmount">Discount Amount</label>
+                    <input type="text" class="form-control" name="discountAmount" id="field_discountAmount"
+                           formControlName="discountAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.transCalculation" for="field_transCalculation">Trans Calculation</label>
+                    <select class="form-control" id="field_transCalculation" name="transCalculation" formControlName="transCalculation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionInfoOption.id === editForm.get('transCalculation')!.value?.id ? editForm.get('transCalculation')!.value : transactionInfoOption" *ngFor="let transactionInfoOption of transcalculations; trackBy: trackById">{{ transactionInfoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.chargeAmount" for="field_chargeAmount">Charge Amount</label>
+                    <select class="form-control" id="field_chargeAmount" name="chargeAmount" formControlName="chargeAmount">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="chargeAmountOption.id === editForm.get('chargeAmount')!.value?.id ? editForm.get('chargeAmount')!.value : chargeAmountOption" *ngFor="let chargeAmountOption of chargeamounts; trackBy: trackById">{{ chargeAmountOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.calculationInfoDetails.destChargeAmount" for="field_destChargeAmount">Dest Charge Amount</label>
+                    <select class="form-control" id="field_destChargeAmount" name="destChargeAmount" formControlName="destChargeAmount">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="destinationChargeAmountOption.id === editForm.get('destChargeAmount')!.value?.id ? editForm.get('destChargeAmount')!.value : destinationChargeAmountOption" *ngFor="let destinationChargeAmountOption of destchargeamounts; trackBy: trackById">{{ destinationChargeAmountOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

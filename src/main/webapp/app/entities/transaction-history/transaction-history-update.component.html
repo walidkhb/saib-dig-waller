@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-transaction-history-heading" jhiTranslate="saibDigitalWalletApp.transactionHistory.home.createOrEditLabel">Create or edit a Transaction History</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.dateTime" for="field_dateTime">Date Time</label>
+                    <input type="text" class="form-control" name="dateTime" id="field_dateTime"
+                           formControlName="dateTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.tRReferenceNo" for="field_tRReferenceNo">T R Reference No</label>
+                    <input type="text" class="form-control" name="tRReferenceNo" id="field_tRReferenceNo"
+                           formControlName="tRReferenceNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.beneficiaryName" for="field_beneficiaryName">Beneficiary Name</label>
+                    <input type="text" class="form-control" name="beneficiaryName" id="field_beneficiaryName"
+                           formControlName="beneficiaryName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.payMode" for="field_payMode">Pay Mode</label>
+                    <input type="text" class="form-control" name="payMode" id="field_payMode"
+                           formControlName="payMode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.bankName" for="field_bankName">Bank Name</label>
+                    <input type="text" class="form-control" name="bankName" id="field_bankName"
+                           formControlName="bankName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.payOutAmount" for="field_payOutAmount">Pay Out Amount</label>
+                    <input type="text" class="form-control" name="payOutAmount" id="field_payOutAmount"
+                           formControlName="payOutAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.payOutCurrency" for="field_payOutCurrency">Pay Out Currency</label>
+                    <input type="text" class="form-control" name="payOutCurrency" id="field_payOutCurrency"
+                           formControlName="payOutCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.exchangeRate" for="field_exchangeRate">Exchange Rate</label>
+                    <input type="text" class="form-control" name="exchangeRate" id="field_exchangeRate"
+                           formControlName="exchangeRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.payInAmount" for="field_payInAmount">Pay In Amount</label>
+                    <input type="text" class="form-control" name="payInAmount" id="field_payInAmount"
+                           formControlName="payInAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.payInCurrency" for="field_payInCurrency">Pay In Currency</label>
+                    <input type="text" class="form-control" name="payInCurrency" id="field_payInCurrency"
+                           formControlName="payInCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.commission" for="field_commission">Commission</label>
+                    <input type="text" class="form-control" name="commission" id="field_commission"
+                           formControlName="commission"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.purposeCode" for="field_purposeCode">Purpose Code</label>
+                    <input type="text" class="form-control" name="purposeCode" id="field_purposeCode"
+                           formControlName="purposeCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transactionHistory.purposeOfTransfer" for="field_purposeOfTransfer">Purpose Of Transfer</label>
+                    <input type="text" class="form-control" name="purposeOfTransfer" id="field_purposeOfTransfer"
+                           formControlName="purposeOfTransfer"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

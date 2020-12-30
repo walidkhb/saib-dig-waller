@@ -1,0 +1,37 @@
+{
+  "name": "PaymentDetails",
+  "fields": [
+    {
+      "fieldName": "payoutCurrency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentMode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purposeOfTransfer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payOutCountryCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentDetails",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201230113117",
+  "entityTableName": "payment_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

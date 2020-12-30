@@ -1,0 +1,102 @@
+{
+  "name": "Customer",
+  "fields": [
+    {
+      "fieldName": "firstNameArabic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fatherNameArabic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grandFatherNameArabic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grandFatherNameEnglish",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "placeOfBirth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iDIssueDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iDExpiryDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profileStatus",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "customerDetails",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "customerDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "customerPreference",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "customerPreference",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "address",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "kYCInfo",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "kycInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fingerDetails",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "fingerDetails"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "wallet"
+    }
+  ],
+  "changelogDate": "20201230112117",
+  "entityTableName": "customer",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

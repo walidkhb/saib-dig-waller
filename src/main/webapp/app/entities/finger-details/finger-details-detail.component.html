@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fingerDetails">
+            <h2><span jhiTranslate="saibDigitalWalletApp.fingerDetails.detail.title">Finger Details</span> {{ fingerDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.fingerDetails.fingerPrint">Finger Print</span></dt>
+                <dd>
+                    <span>{{ fingerDetails.fingerPrint }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.fingerDetails.fingerIndex">Finger Index</span></dt>
+                <dd>
+                    <span>{{ fingerDetails.fingerIndex }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.fingerDetails.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="fingerDetails.customer">
+                        <a [routerLink]="['/customer', fingerDetails.customer?.id, 'view']">{{ fingerDetails.customer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/finger-details', fingerDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "saibDigitalWalletApp": {
+    "transactionDetails": {
+      "home": {
+        "title": "Transaction Details",
+        "createLabel": "Create a new Transaction Details",
+        "createOrEditLabel": "Create or edit a Transaction Details",
+        "search": "Search for Transaction Details",
+        "notFound": "No Transaction Details found"
+      },
+      "created": "A new Transaction Details is created with identifier {{ param }}",
+      "updated": "A Transaction Details is updated with identifier {{ param }}",
+      "deleted": "A Transaction Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Details"
+      },
+      "debitAmount": "Debit Amount",
+      "debitCurrency": "Debit Currency",
+      "creditAmount": "Credit Amount",
+      "creditCurrency": "Credit Currency",
+      "exchangeRate": "Exchange Rate",
+      "fees": "Fees",
+      "purposeOfTransfer": "Purpose Of Transfer",
+      "partnerReferenceNumber": "Partner Reference Number"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="address">
+            <h2><span jhiTranslate="saibDigitalWalletApp.address.detail.title">Address</span> {{ address.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.buildingNumber">Building Number</span></dt>
+                <dd>
+                    <span>{{ address.buildingNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.streetName">Street Name</span></dt>
+                <dd>
+                    <span>{{ address.streetName }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.neighborhood">Neighborhood</span></dt>
+                <dd>
+                    <span>{{ address.neighborhood }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.cityName">City Name</span></dt>
+                <dd>
+                    <span>{{ address.cityName }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.zipCode">Zip Code</span></dt>
+                <dd>
+                    <span>{{ address.zipCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.additionalNumber">Additional Number</span></dt>
+                <dd>
+                    <span>{{ address.additionalNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.regionDescription">Region Description</span></dt>
+                <dd>
+                    <span>{{ address.regionDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.address.unitNumber">Unit Number</span></dt>
+                <dd>
+                    <span>{{ address.unitNumber }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/address', address.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

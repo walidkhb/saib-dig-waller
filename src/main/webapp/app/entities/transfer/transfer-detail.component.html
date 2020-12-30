@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transfer">
+            <h2><span jhiTranslate="saibDigitalWalletApp.transfer.detail.title">Transfer</span> {{ transfer.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.transfer.debtDetails">Debt Details</span></dt>
+                <dd>
+                    <div *ngIf="transfer.debtDetails">
+                        <a [routerLink]="['/debtor', transfer.debtDetails?.id, 'view']">{{ transfer.debtDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transfer.credDetails">Cred Details</span></dt>
+                <dd>
+                    <div *ngIf="transfer.credDetails">
+                        <a [routerLink]="['/creditor', transfer.credDetails?.id, 'view']">{{ transfer.credDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transfer.beneficiaryInfo">Beneficiary Info</span></dt>
+                <dd>
+                    <div *ngIf="transfer.beneficiaryInfo">
+                        <a [routerLink]="['/beneficiary', transfer.beneficiaryInfo?.id, 'view']">{{ transfer.beneficiaryInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transfer.transactionInfo">Transaction Info</span></dt>
+                <dd>
+                    <div *ngIf="transfer.transactionInfo">
+                        <a [routerLink]="['/transaction-info', transfer.transactionInfo?.id, 'view']">{{ transfer.transactionInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transfer', transfer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

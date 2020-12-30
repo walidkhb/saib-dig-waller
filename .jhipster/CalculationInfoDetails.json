@@ -1,0 +1,62 @@
+{
+  "name": "CalculationInfoDetails",
+  "fields": [
+    {
+      "fieldName": "totalDebitAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "destinationAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "destinationExchangeRate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "destinationCurrencyIndicator",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discountAmount",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "transactionInfo",
+      "otherEntityRelationshipName": "calculationInfoDetails",
+      "relationshipName": "transCalculation",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "chargeAmount",
+      "otherEntityRelationshipName": "calculationInfoDetails",
+      "relationshipName": "chargeAmount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "destinationChargeAmount",
+      "otherEntityRelationshipName": "calculationInfoDetails",
+      "relationshipName": "destChargeAmount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230114117",
+  "entityTableName": "calculation_info_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

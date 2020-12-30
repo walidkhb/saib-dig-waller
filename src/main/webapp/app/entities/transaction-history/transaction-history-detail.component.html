@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionHistory">
+            <h2><span jhiTranslate="saibDigitalWalletApp.transactionHistory.detail.title">Transaction History</span> {{ transactionHistory.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.dateTime">Date Time</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.dateTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.tRReferenceNo">T R Reference No</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.tRReferenceNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.beneficiaryName">Beneficiary Name</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.beneficiaryName }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payMode">Pay Mode</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.payMode }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.bankName">Bank Name</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.bankName }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payOutAmount">Pay Out Amount</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.payOutAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payOutCurrency">Pay Out Currency</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.payOutCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.exchangeRate">Exchange Rate</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.exchangeRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payInAmount">Pay In Amount</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.payInAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.payInCurrency">Pay In Currency</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.payInCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.commission">Commission</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.commission }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.status">Status</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.description">Description</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.purposeCode">Purpose Code</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.purposeCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionHistory.purposeOfTransfer">Purpose Of Transfer</span></dt>
+                <dd>
+                    <span>{{ transactionHistory.purposeOfTransfer }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-history', transactionHistory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

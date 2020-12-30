@@ -1,0 +1,41 @@
+{
+  "name": "Creditor",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "beneficiary",
+      "otherEntityRelationshipName": "creditor",
+      "relationshipName": "beneficiary",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "creditor",
+      "relationshipName": "credWalletId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "amount",
+      "otherEntityRelationshipName": "creditor",
+      "relationshipName": "credAmount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230113417",
+  "entityTableName": "creditor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

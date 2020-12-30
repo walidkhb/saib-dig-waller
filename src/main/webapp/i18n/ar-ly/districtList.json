@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "districtList": {
+      "home": {
+        "title": "District Lists",
+        "createLabel": "Create a new District List",
+        "createOrEditLabel": "Create or edit a District List",
+        "search": "Search for District List",
+        "notFound": "No District Lists found"
+      },
+      "created": "A new District List is created with identifier {{ param }}",
+      "updated": "A District List is updated with identifier {{ param }}",
+      "deleted": "A District List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete District List {{ id }}?"
+      },
+      "detail": {
+        "title": "District List"
+      },
+      "districtId": "District Id",
+      "districtName": "District Name"
+    }
+  }
+}

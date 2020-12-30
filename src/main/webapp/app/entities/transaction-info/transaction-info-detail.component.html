@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionInfo">
+            <h2><span jhiTranslate="saibDigitalWalletApp.transactionInfo.detail.title">Transaction Info</span> {{ transactionInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionInfo.transactionType">Transaction Type</span></dt>
+                <dd>
+                    <span>{{ transactionInfo.transactionType }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionInfo.transactionId">Transaction Id</span></dt>
+                <dd>
+                    <span>{{ transactionInfo.transactionId }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionInfo.creditDebitIndicator">Credit Debit Indicator</span></dt>
+                <dd>
+                    <span>{{ transactionInfo.creditDebitIndicator }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionInfo.creationDateTime">Creation Date Time</span></dt>
+                <dd>
+                    <span>{{ transactionInfo.creationDateTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionInfo.status">Status</span></dt>
+                <dd>
+                    <span>{{ transactionInfo.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.transactionInfo.transactionAttr">Transaction Attr</span></dt>
+                <dd>
+                    <div *ngIf="transactionInfo.transactionAttr">
+                        <a [routerLink]="['/transaction-attribute', transactionInfo.transactionAttr?.id, 'view']">{{ transactionInfo.transactionAttr?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-info', transactionInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{
+  "name": "TransactionInfo",
+  "fields": [
+    {
+      "fieldName": "transactionType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creditDebitIndicator",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDateTime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "transactionAttribute",
+      "otherEntityRelationshipName": "transactionInfo",
+      "relationshipName": "transactionAttr",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230113617",
+  "entityTableName": "transaction_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

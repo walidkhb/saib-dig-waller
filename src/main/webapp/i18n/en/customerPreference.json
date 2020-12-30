@@ -1,0 +1,24 @@
+{
+  "saibDigitalWalletApp": {
+    "customerPreference": {
+      "home": {
+        "title": "Customer Preferences",
+        "createLabel": "Create a new Customer Preference",
+        "createOrEditLabel": "Create or edit a Customer Preference",
+        "search": "Search for Customer Preference",
+        "notFound": "No Customer Preferences found"
+      },
+      "created": "A new Customer Preference is created with identifier {{ param }}",
+      "updated": "A Customer Preference is updated with identifier {{ param }}",
+      "deleted": "A Customer Preference is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Preference {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Preference"
+      },
+      "email": "Email",
+      "language": "Language"
+    }
+  }
+}

@@ -1,0 +1,286 @@
+entity Customer {
+    FirstNameArabic String,
+    FatherNameArabic String,
+    GrandFatherNameArabic String,
+    GrandFatherNameEnglish String,
+    PlaceOfBirth String,
+    IDIssueDate String,
+    IDExpiryDate String,
+    MaritalStatus String,
+    CustomerId String,
+    ProfileStatus String
+}
+
+entity CustomerDetails {
+	NationalIdentityNumber String,
+    IdType String,
+    DateOfBirth String,
+    MobilePhoneNumber String pattern(/[+]\d+-\d+/),
+    AgentVerificationNumber String
+}
+
+entity CustomerPreference {
+	Email String pattern(/[^@]+@[^\.]+\..+$/),
+    Language String
+}
+
+entity Address {
+	BuildingNumber String,
+    StreetName String,
+    Neighborhood String,
+    CityName String,
+    ZipCode String,
+    AdditionalNumber String,
+    RegionDescription String,
+    UnitNumber String
+    
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity KYCInfo {
+	Level String,
+	Status String
+}
+
+entity FingerDetails {
+	FingerPrint String,
+    FingerIndex String 
+}
+
+entity Wallet {
+	WalletId String,
+    Status String,
+    StatusUpdateDateTime String,
+    Currency String,
+    AccountType String,
+    AccountSubType String,
+    Description String
+    
+}
+
+entity AccountScheme {
+	SchemeName String,
+    Identification String
+}
+
+relationship OneToOne {
+	Customer{customerDetails} to CustomerDetails,
+    Customer{customerPreference} to CustomerPreference,
+    Customer{address} to Address,
+    Customer{kycInfo} to KYCInfo
+}
+
+relationship OneToMany {
+	Customer{fingerDetails} to FingerDetails
+    Customer{wallet} to Wallet
+    Wallet{accountScheme} to AccountScheme
+}
+
+
+entity Transfer {
+	
+}
+
+relationship OneToOne {
+	Transfer{debtDetails} to Debtor,
+    Transfer{credDetails} to Creditor,
+    Transfer{beneficiaryInfo} to Beneficiary,
+    Transfer{transactionInfo} to TransactionInfo,
+}
+
+entity Beneficiary {
+	NickName String,
+	FirstName String,
+	LastName String,
+	MiddleName String,
+	BeneficiaryId String,
+    BeneficiaryType String,
+    
+	Address String,
+	Nationality String,
+	Telephone String,
+	DateOfBirth String,
+    IDNumber String,
+    IDType String,
+	BeneficiaryRelation String,
+    BeneficiaryCity String,
+    BeneficiaryPhoneCountryCode String,
+    BeneficiarySourceOfFund String,
+    BeneficiaryZipCode String,
+	BeneficiaryStatus String,
+    BeneficiaryCurrency String
+}
+
+entity PaymentDetails {
+	PayoutCurrency String,
+	PaymentMode String,
+	PurposeOfTransfer String,
+	PayOutCountryCode String,
+    PaymentDetails String
+}
+
+entity BeneficiaryBank {
+	BankCode String,
+	BankName String,
+	BankCountry String,
+	BankBranchCode String,
+    BranchNameAndAddress String
+}
+
+relationship OneToOne {
+	Beneficiary{beneficiaryDetails} to PaymentDetails,
+    Beneficiary{beneficiaryBank} to BeneficiaryBank,
+    Beneficiary{beneficiaryAccount} to AccountScheme,
+}
+
+entity Debtor {
+}
+
+relationship OneToOne {
+	Debtor{debtorAccount} to AccountScheme
+    Debtor{debtWalletId} to Wallet
+    Debtor{debtAmount} to Amount
+    Debtor{debtCustomer} to Customer
+}
+
+entity Creditor {
+}
+
+relationship OneToOne {
+	Creditor{beneficiary} to Beneficiary
+    Creditor{credWalletId} to Wallet
+    Creditor{credAmount} to Amount
+}
+
+entity Amount {
+	Amount Float,
+    NetAmount Float,
+	Currency String,
+    PurposeOfTransfer String
+}
+
+relationship OneToOne {
+	Amount{walletChargeAmount} to ChargeAmount
+}
+
+entity TransactionInfo {
+	TransactionType String,
+    TransactionId String,
+    CreditDebitIndicator String,
+    CreationDateTime String,
+    Status String
+}
+
+entity TransactionAttribute {
+	NarativeLine1 String,
+    NarativeLine2 String,
+    NarativeLine3 String,
+    NarativeLine4 String,
+    ClientRefNumber String
+}
+
+relationship OneToOne {
+	TransactionInfo{transactionAttr} to TransactionAttribute
+}
+
+entity TransactionDetails {
+    DebitAmount String,
+    DebitCurrency String,
+    CreditAmount String,
+    CreditCurrency String,
+    ExchangeRate String,
+    Fees String,
+    PurposeOfTransfer String,
+    PartnerReferenceNumber String
+}
+
+entity TransactionHistory {
+	DateTime String,
+    TRReferenceNo String,
+    BeneficiaryName String,
+    PayMode String,
+    BankName String,
+    PayOutAmount String,
+    PayOutCurrency String,
+    ExchangeRate String,
+    PayInAmount String,
+    PayInCurrency String,
+    Commission String,
+    Status String,
+    Description String,
+    PurposeCode String,
+    PurposeOfTransfer String
+}
+
+entity CalculationInfo {
+    CustomerId String, 
+    BeneficiaryId Integer,
+    FromCurrency String, 
+    ToCurrency String, 
+    TransactionAmount Float,
+    TransactionCurrency String
+}
+
+entity CalculationInfoDetails {
+   TotalDebitAmount String,
+   DestinationAmount String,
+   DestinationExchangeRate String,
+   DestinationCurrencyIndicator String,
+   DiscountAmount String
+}
+
+entity ChargeAmount {
+	Amount String,
+    Currency String,
+    VAT String
+}
+
+entity DestinationChargeAmount {
+	VATEstimated String,
+    AmountEstimated String
+}
+
+relationship OneToOne {
+	CalculationInfoDetails{transCalculation} to TransactionInfo
+    CalculationInfoDetails{chargeAmount} to ChargeAmount
+    CalculationInfoDetails{destChargeAmount} to DestinationChargeAmount
+}
+
+
+entity CurrencyList {
+	CurrencyName String,
+    CurrencyCode String
+}
+
+entity BankList {
+	BankId String,
+    BankName String,
+    BranchIndicator String,
+    FlagLabel String
+}
+
+entity CountryList {
+	CountryName String,
+    CountryCode String
+}
+
+entity CountryCodeList {
+	CountryName String,
+    CountryCode String,
+    CountryISDCode String
+}
+
+entity VersionList {
+	APIRecord String,
+    VersionNumber String
+}
+
+entity BranchList {
+	BranchId String,
+    BranchName String
+}
+entity DistrictList {
+	DistrictId String,
+    DistrictName String
+}

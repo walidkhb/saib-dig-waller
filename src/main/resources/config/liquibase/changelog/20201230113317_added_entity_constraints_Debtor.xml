@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Debtor.
+    -->
+    <changeSet id="20201230113317-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="debtor_account_id"
+                                 baseTableName="debtor"
+                                 constraintName="fk_debtor_debtor_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="account_scheme"/>
+
+        <addForeignKeyConstraint baseColumnNames="debt_wallet_id_id"
+                                 baseTableName="debtor"
+                                 constraintName="fk_debtor_debt_wallet_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wallet"/>
+
+        <addForeignKeyConstraint baseColumnNames="debt_amount_id"
+                                 baseTableName="debtor"
+                                 constraintName="fk_debtor_debt_amount_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="amount"/>
+
+        <addForeignKeyConstraint baseColumnNames="debt_customer_id"
+                                 baseTableName="debtor"
+                                 constraintName="fk_debtor_debt_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+    </changeSet>
+</databaseChangeLog>

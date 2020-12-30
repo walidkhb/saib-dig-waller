@@ -1,0 +1,30 @@
+{
+  "saibDigitalWalletApp": {
+    "calculationInfoDetails": {
+      "home": {
+        "title": "Calculation Info Details",
+        "createLabel": "Create a new Calculation Info Details",
+        "createOrEditLabel": "Create or edit a Calculation Info Details",
+        "search": "Search for Calculation Info Details",
+        "notFound": "No Calculation Info Details found"
+      },
+      "created": "A new Calculation Info Details is created with identifier {{ param }}",
+      "updated": "A Calculation Info Details is updated with identifier {{ param }}",
+      "deleted": "A Calculation Info Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Calculation Info Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Calculation Info Details"
+      },
+      "totalDebitAmount": "Total Debit Amount",
+      "destinationAmount": "Destination Amount",
+      "destinationExchangeRate": "Destination Exchange Rate",
+      "destinationCurrencyIndicator": "Destination Currency Indicator",
+      "discountAmount": "Discount Amount",
+      "transCalculation": "Trans Calculation",
+      "chargeAmount": "Charge Amount",
+      "destChargeAmount": "Dest Charge Amount"
+    }
+  }
+}

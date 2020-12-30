@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-transfer-heading" jhiTranslate="saibDigitalWalletApp.transfer.home.createOrEditLabel">Create or edit a Transfer</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transfer.debtDetails" for="field_debtDetails">Debt Details</label>
+                    <select class="form-control" id="field_debtDetails" name="debtDetails" formControlName="debtDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="debtorOption.id === editForm.get('debtDetails')!.value?.id ? editForm.get('debtDetails')!.value : debtorOption" *ngFor="let debtorOption of debtdetails; trackBy: trackById">{{ debtorOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transfer.credDetails" for="field_credDetails">Cred Details</label>
+                    <select class="form-control" id="field_credDetails" name="credDetails" formControlName="credDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="creditorOption.id === editForm.get('credDetails')!.value?.id ? editForm.get('credDetails')!.value : creditorOption" *ngFor="let creditorOption of creddetails; trackBy: trackById">{{ creditorOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transfer.beneficiaryInfo" for="field_beneficiaryInfo">Beneficiary Info</label>
+                    <select class="form-control" id="field_beneficiaryInfo" name="beneficiaryInfo" formControlName="beneficiaryInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="beneficiaryOption.id === editForm.get('beneficiaryInfo')!.value?.id ? editForm.get('beneficiaryInfo')!.value : beneficiaryOption" *ngFor="let beneficiaryOption of beneficiaryinfos; trackBy: trackById">{{ beneficiaryOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.transfer.transactionInfo" for="field_transactionInfo">Transaction Info</label>
+                    <select class="form-control" id="field_transactionInfo" name="transactionInfo" formControlName="transactionInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionInfoOption.id === editForm.get('transactionInfo')!.value?.id ? editForm.get('transactionInfo')!.value : transactionInfoOption" *ngFor="let transactionInfoOption of transactioninfos; trackBy: trackById">{{ transactionInfoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

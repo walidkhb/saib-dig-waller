@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="debtor">
+            <h2><span jhiTranslate="saibDigitalWalletApp.debtor.detail.title">Debtor</span> {{ debtor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="saibDigitalWalletApp.debtor.debtorAccount">Debtor Account</span></dt>
+                <dd>
+                    <div *ngIf="debtor.debtorAccount">
+                        <a [routerLink]="['/account-scheme', debtor.debtorAccount?.id, 'view']">{{ debtor.debtorAccount?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.debtor.debtWalletId">Debt Wallet Id</span></dt>
+                <dd>
+                    <div *ngIf="debtor.debtWalletId">
+                        <a [routerLink]="['/wallet', debtor.debtWalletId?.id, 'view']">{{ debtor.debtWalletId?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.debtor.debtAmount">Debt Amount</span></dt>
+                <dd>
+                    <div *ngIf="debtor.debtAmount">
+                        <a [routerLink]="['/amount', debtor.debtAmount?.id, 'view']">{{ debtor.debtAmount?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="saibDigitalWalletApp.debtor.debtCustomer">Debt Customer</span></dt>
+                <dd>
+                    <div *ngIf="debtor.debtCustomer">
+                        <a [routerLink]="['/customer', debtor.debtCustomer?.id, 'view']">{{ debtor.debtCustomer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/debtor', debtor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

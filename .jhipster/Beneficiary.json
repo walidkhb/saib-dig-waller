@@ -1,0 +1,118 @@
+{
+  "name": "Beneficiary",
+  "fields": [
+    {
+      "fieldName": "nickName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iDNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iDType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryRelation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryCity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryPhoneCountryCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiarySourceOfFund",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryZipCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "beneficiaryCurrency",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "paymentDetails",
+      "otherEntityRelationshipName": "beneficiary",
+      "relationshipName": "beneficiaryDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "beneficiaryBank",
+      "otherEntityRelationshipName": "beneficiary",
+      "relationshipName": "beneficiaryBank",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "accountScheme",
+      "otherEntityRelationshipName": "beneficiary",
+      "relationshipName": "beneficiaryAccount",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201230113017",
+  "entityTableName": "beneficiary",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,118 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-customer-heading" jhiTranslate="saibDigitalWalletApp.customer.home.createOrEditLabel">Create or edit a Customer</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.firstNameArabic" for="field_firstNameArabic">First Name Arabic</label>
+                    <input type="text" class="form-control" name="firstNameArabic" id="field_firstNameArabic"
+                           formControlName="firstNameArabic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.fatherNameArabic" for="field_fatherNameArabic">Father Name Arabic</label>
+                    <input type="text" class="form-control" name="fatherNameArabic" id="field_fatherNameArabic"
+                           formControlName="fatherNameArabic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.grandFatherNameArabic" for="field_grandFatherNameArabic">Grand Father Name Arabic</label>
+                    <input type="text" class="form-control" name="grandFatherNameArabic" id="field_grandFatherNameArabic"
+                           formControlName="grandFatherNameArabic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.grandFatherNameEnglish" for="field_grandFatherNameEnglish">Grand Father Name English</label>
+                    <input type="text" class="form-control" name="grandFatherNameEnglish" id="field_grandFatherNameEnglish"
+                           formControlName="grandFatherNameEnglish"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.placeOfBirth" for="field_placeOfBirth">Place Of Birth</label>
+                    <input type="text" class="form-control" name="placeOfBirth" id="field_placeOfBirth"
+                           formControlName="placeOfBirth"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.iDIssueDate" for="field_iDIssueDate">I D Issue Date</label>
+                    <input type="text" class="form-control" name="iDIssueDate" id="field_iDIssueDate"
+                           formControlName="iDIssueDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.iDExpiryDate" for="field_iDExpiryDate">I D Expiry Date</label>
+                    <input type="text" class="form-control" name="iDExpiryDate" id="field_iDExpiryDate"
+                           formControlName="iDExpiryDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.maritalStatus" for="field_maritalStatus">Marital Status</label>
+                    <input type="text" class="form-control" name="maritalStatus" id="field_maritalStatus"
+                           formControlName="maritalStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.customerId" for="field_customerId">Customer Id</label>
+                    <input type="text" class="form-control" name="customerId" id="field_customerId"
+                           formControlName="customerId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.profileStatus" for="field_profileStatus">Profile Status</label>
+                    <input type="text" class="form-control" name="profileStatus" id="field_profileStatus"
+                           formControlName="profileStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.customerDetails" for="field_customerDetails">Customer Details</label>
+                    <select class="form-control" id="field_customerDetails" name="customerDetails" formControlName="customerDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerDetailsOption.id === editForm.get('customerDetails')!.value?.id ? editForm.get('customerDetails')!.value : customerDetailsOption" *ngFor="let customerDetailsOption of customerdetails; trackBy: trackById">{{ customerDetailsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.customerPreference" for="field_customerPreference">Customer Preference</label>
+                    <select class="form-control" id="field_customerPreference" name="customerPreference" formControlName="customerPreference">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerPreferenceOption.id === editForm.get('customerPreference')!.value?.id ? editForm.get('customerPreference')!.value : customerPreferenceOption" *ngFor="let customerPreferenceOption of customerpreferences; trackBy: trackById">{{ customerPreferenceOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.address" for="field_address">Address</label>
+                    <select class="form-control" id="field_address" name="address" formControlName="address">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="addressOption.id === editForm.get('address')!.value?.id ? editForm.get('address')!.value : addressOption" *ngFor="let addressOption of addresses; trackBy: trackById">{{ addressOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="saibDigitalWalletApp.customer.kycInfo" for="field_kycInfo">Kyc Info</label>
+                    <select class="form-control" id="field_kycInfo" name="kycInfo" formControlName="kycInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="kYCInfoOption.id === editForm.get('kycInfo')!.value?.id ? editForm.get('kycInfo')!.value : kYCInfoOption" *ngFor="let kYCInfoOption of kycinfos; trackBy: trackById">{{ kYCInfoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
